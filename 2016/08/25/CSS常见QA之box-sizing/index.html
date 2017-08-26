@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>CSS常见QA之box-sizing | LiuQiang&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="LiuQiang&#39;s blog">
+	<img src="/favicon.png" alt="LiuQiang&#39;s blog"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://github.com/verney2016" target="_blank">github</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      CSS常见QA之box-sizing
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<h1 id="1-box-sizing常见属性"><a href="#1-box-sizing常见属性" class="headerlink" title="1.box-sizing常见属性"></a>1.box-sizing常见属性</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">content-box、border-box和inherit。</div></pre></td></tr></table></figure>
+<p>以下为给一个div设置content-box(不设置box-sizing属性的值，默认为content-box)和border-box的区别，代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>box-sizing<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">.content-box &#123;</div><div class="line">    width: 500px;</div><div class="line">    height: 100px;</div><div class="line">    border-right: 200px solid;</div><div class="line">    border-left: 1px solid blue;</div><div class="line">    border-top: 1px solid blue;</div><div class="line">    border-bottom: 1px solid blue;</div><div class="line">    margin-top: 150px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.border-box &#123;</div><div class="line">    width: 500px;</div><div class="line">    height: 100px;</div><div class="line">    box-sizing: border-box;</div><div class="line">    border-right: 200px solid;</div><div class="line">    border-left: 1px solid blue;</div><div class="line">    border-top: 1px solid blue;</div><div class="line">    border-bottom: 1px solid blue;</div><div class="line">    margin: 50px 0;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content-box"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"border-box"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>效果如下所示：</p>
+<p><img src="http://7xt42b.com1.z0.glb.clouddn.com/box-sizing.png" alt="box-sizing"></p>
+<h1 id="2-设置padding属性"><a href="#2-设置padding属性" class="headerlink" title="2.设置padding属性"></a>2.设置padding属性</h1><blockquote>
+<p>content-box: padding和border不被包含在定义的width和height之内。对象的实际宽度等于设置的width值和border、padding之和，即 (Element width = width + border + padding)，此属性表现为<strong>标准模式下的盒模型</strong>。</p>
+<p>border-box: padding和border被包含在定义的width和height之内。对象的实际宽度就等于设置的width值，即使定义有border和padding也不会改变对象的实际宽度，即 (Element width = width)，此属性表现为<strong>怪异模式下的盒模型</strong>。</p>
+</blockquote>
+<p>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line"></div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;box-sizing&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">.content-box &#123;</div><div class="line">    width: 500px;</div><div class="line">    height: 100px;</div><div class="line">    border-right: 200px solid;</div><div class="line">    border-left: 1px solid blue;</div><div class="line">    border-top: 1px solid blue;</div><div class="line">    border-bottom: 1px solid blue;</div><div class="line">    margin: 50px 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.content-box-padding &#123;</div><div class="line">    width: 500px;</div><div class="line">    height: 100px;</div><div class="line">    border-right: 200px solid;</div><div class="line">    border-left: 1px solid blue;</div><div class="line">    border-top: 1px solid blue;</div><div class="line">    border-bottom: 1px solid blue;</div><div class="line">    padding: 10px;</div><div class="line">    margin: 50px 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.border-box &#123;</div><div class="line">    width: 500px;</div><div class="line">    height: 100px;</div><div class="line">    box-sizing: border-box;</div><div class="line">    border-right: 200px solid;</div><div class="line">    border-left: 1px solid blue;</div><div class="line">    border-top: 1px solid blue;</div><div class="line">    border-bottom: 1px solid blue;</div><div class="line">    margin: 50px 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.border-box-padding &#123;</div><div class="line">    width: 500px;</div><div class="line">    height: 100px;</div><div class="line">    box-sizing: border-box;</div><div class="line">    border-right: 200px solid;</div><div class="line">    border-left: 1px solid blue;</div><div class="line">    border-top: 1px solid blue;</div><div class="line">    border-bottom: 1px solid blue;</div><div class="line">    padding: 10px;</div><div class="line">    margin: 50px 0;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div class=&quot;content-box&quot;&gt;</div><div class="line">        content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div class=&quot;content-box-padding&quot;&gt;</div><div class="line">        content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box content-box</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div class=&quot;border-box&quot;&gt;</div><div class="line">        border-box border-box border-box border-box border-box border-box border-box border-box border-box border-box border-box border-box</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div class=&quot;border-box-padding&quot;&gt;</div><div class="line">        border-box border-box border-box border-box border-box border-box border-box border-box border-box border-box border-box border-box</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>效果如下图所示：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/box-sizing-padding.png" alt="box-sizing-padding"></p>
+
+	</div>
+	<div class="meta split">
+		
+			<span>本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+		
+		<time class="post-date" datetime="2016-08-25T05:58:08.000Z" itemprop="datePublished">2016-08-25</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="CSS常见QA之box-sizing" data-title="CSS常见QA之box-sizing" data-url="http://yoursite.com/2016/08/25/CSS常见QA之box-sizing/"></div>
+<script type="text/javascript">
+
+var duoshuoQuery = {short_name:"yumemor"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://dn-chop.qbox.me/activity_live/QQ20170413-173418@2x.png' alt='Liu Qiang'>
+					<div class="media__body">
+						<h4>LiuQiang&#39;s blog</h4>
+						<p class='site-description'>记录每一次的点点滴滴</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="https://github.com/verney2016" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		
+			<span>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次, 访客数 <span id="busuanzi_value_site_uv"></span> 人次</span>
+		
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	
+		<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
