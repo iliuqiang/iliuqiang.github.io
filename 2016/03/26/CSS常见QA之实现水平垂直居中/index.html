@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS常见QA之实现水平垂直居中 | LiuQiang&#39;s blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
+  
+
+  <meta name="description" content="在前端开发中，我们经常会遇到将元素居中的情况。其中，居中又分为水平居中和垂直居中。水平居中是很容易的，直接设置元素{margin:0 auto;}就可以实现。但是垂直居中就要相对复杂一些了。下面就讨论水平垂直居中的完整实现。  步骤一：定义元素首先，定义一个需要垂直居中的div元素，代码如下： &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&quot;en&quot;&amp;gt; &amp;lt;he">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS常见QA之实现水平垂直居中">
+<meta property="og:url" content="http://yoursite.com/2016/03/26/CSS常见QA之实现水平垂直居中/index.html">
+<meta property="og:site_name" content="LiuQiang's blog">
+<meta property="og:description" content="在前端开发中，我们经常会遇到将元素居中的情况。其中，居中又分为水平居中和垂直居中。水平居中是很容易的，直接设置元素{margin:0 auto;}就可以实现。但是垂直居中就要相对复杂一些了。下面就讨论水平垂直居中的完整实现。  步骤一：定义元素首先，定义一个需要垂直居中的div元素，代码如下： &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&quot;en&quot;&amp;gt; &amp;lt;he">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/css_center01.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/css_center03.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/css_center02.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/css_center04.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/css_center05.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/css_center06.png">
+<meta property="og:updated_time" content="2017-08-28T02:36:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS常见QA之实现水平垂直居中">
+<meta name="twitter:description" content="在前端开发中，我们经常会遇到将元素居中的情况。其中，居中又分为水平居中和垂直居中。水平居中是很容易的，直接设置元素{margin:0 auto;}就可以实现。但是垂直居中就要相对复杂一些了。下面就讨论水平垂直居中的完整实现。  步骤一：定义元素首先，定义一个需要垂直居中的div元素，代码如下： &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&quot;en&quot;&amp;gt; &amp;lt;he">
+<meta name="twitter:image" content="http://7xt42b.com1.z0.glb.clouddn.com/css_center01.png">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤一：定义元素"><span class="toc-text">步骤一：定义元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤二：清除浏览器默认样式"><span class="toc-text">步骤二：清除浏览器默认样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤三：实现水平居中"><span class="toc-text">步骤三：实现水平居中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤四：实现垂直偏移"><span class="toc-text">步骤四：实现垂直偏移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤五：实现垂直居中"><span class="toc-text">步骤五：实现垂直居中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用CSS3的flex弹性布局实现水平垂直居中"><span class="toc-text">使用CSS3的flex弹性布局实现水平垂直居中</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-CSS常见QA之实现水平垂直居中" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">CSS常见QA之实现水平垂直居中</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2016.03.26</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Liu Qiang</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <blockquote>
+<p>在前端开发中，我们经常会遇到将元素居中的情况。其中，居中又分为水平居中和垂直居中。水平居中是很容易的，直接设置元素{margin:0 auto;}就可以实现。但是垂直居中就要相对复杂一些了。<br>下面就讨论水平垂直居中的完整实现。</p>
+</blockquote>
+<h2 id="步骤一：定义元素"><a href="#步骤一：定义元素" class="headerlink" title="步骤一：定义元素"></a>步骤一：定义元素</h2><p>首先，定义一个需要垂直居中的div元素，代码如下：</p>
+<pre><code class="html"><span class="meta">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span>
+<span class="tag">&lt;<span class="name">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">title</span>&gt;</span>css实现元素水平垂直居中<span class="tag">&lt;/<span class="name">title</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">
+        .content {
+            width: 300px;
+            height: 300px;
+            background: orange;
+        }
+    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">head</span>&gt;</span>
+<span class="tag">&lt;<span class="name">body</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">html</span>&gt;</span>
+</code></pre>
+<p>效果如下：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/css_center01.png" alt="enter image description here"></p>
+<h2 id="步骤二：清除浏览器默认样式"><a href="#步骤二：清除浏览器默认样式" class="headerlink" title="步骤二：清除浏览器默认样式"></a>步骤二：清除浏览器默认样式</h2><p>不过，在这之前，我们先要设置div元素的祖元素即html和body的高度为100%(因为它们默认高度是0)，并且清除默认样式，代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;css实现元素水平垂直居中&lt;/title&gt;
+    &lt;style&gt;
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0; /*清除默认样式*/
+        padding: 0; /*清除默认样式*/
+    }
+
+    .content {
+        width: 300px;
+        height: 300px;
+        background: orange;
+        margin: 0 auto; /*水平居中*/
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>清除默认样式后，效果如下：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/css_center03.png" alt="enter image description here"></p>
+<h2 id="步骤三：实现水平居中"><a href="#步骤三：实现水平居中" class="headerlink" title="步骤三：实现水平居中"></a>步骤三：实现水平居中</h2><p>可以通过设置{margin: 0 auto}实现水平居中,代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;css实现元素水平垂直居中&lt;/title&gt;
+    &lt;style&gt;
+        .content {
+            width: 300px;
+            height: 300px;
+            background: orange;
+            margin: 0 auto;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果如下：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/css_center02.png" alt="enter image description here"></p>
+<p>通过此步骤，我们已经实现了水平居中，接下来实现比较难的垂直居中。</p>
+<h2 id="步骤四：实现垂直偏移"><a href="#步骤四：实现垂直偏移" class="headerlink" title="步骤四：实现垂直偏移"></a>步骤四：实现垂直偏移</h2><p> 接下来，需要让div往下移动，我们知道top属性可以使得元素向下偏移，但是，由于默认情况下，元素在文档流里是从上往下、从左往右紧密布局的，我们不可以直接通过top属性改变它的垂直偏移，这就需要使用position属性，设置它的值为relative。<br> 垂直偏移需要用到top属性，它的值可以是具体的像素，也可以是百分数。因为我们现在不知道父元素（即body）的具体高度，所以，是不可以通过具体像素来偏移的，而应该用百分数。既然是让它居中，有人想让它的值为50%不就可以了吗？问题真的就是这么简单，我们来试下设置{top:50%},会出现什么效果，代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;css实现元素水平垂直居中&lt;/title&gt;
+    &lt;style&gt;
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0; /*清除默认样式*/
+        padding: 0; /*清除默认样式*/
+    }
+
+    .content {
+        width: 300px;
+        height: 300px;
+        background: orange;
+        margin: 0 auto; /*水平居中*/
+        position: relative;
+        top:50%;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果如下：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/css_center04.png" alt="enter image description here"></p>
+<p>我们发现，此时div在垂直方向上并没有居中，明显是向下偏移了。我们在浏览器中画一条红色的线条用来参考，如图所示：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/css_center05.png" alt="enter image description here"></p>
+<h2 id="步骤五：实现垂直居中"><a href="#步骤五：实现垂直居中" class="headerlink" title="步骤五：实现垂直居中"></a>步骤五：实现垂直居中</h2><p>通过步骤四，我们发现，要想让div居中，只需要让div的中心移动到红线的位置，就可以了。那么问题来了，怎么让它的中心移动到红线处呢？从图中可以观察到，从div的中心到红线的距离是div自身高度的一半。这时候，我们可以使用通过 margin-top属性来设置，因为div的自身高度是300px，需要设置他的margin-top值为-150px。为什么是要设置成负数的呢？因为正数是向下偏移，我们是希望div向上偏移，所以应该是负数，代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;css实现元素水平垂直居中&lt;/title&gt;
+    &lt;style&gt;
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0; /*清除默认样式*/
+        padding: 0; /*清除默认样式*/
+    }
+
+    .content {
+        width: 300px;
+        height: 300px;
+        background: orange;
+        margin: 0 auto; /*水平居中*/
+        position: relative;
+        top:50%;
+        margin-top: -150px;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果如下：</p>
+<p><img src="http://7xt42b.com1.z0.glb.clouddn.com/css_center06.png" alt="enter image description here"></p>
+<p>我们发现此时div确实居中了，well done，终于达到我们要的效果了，哈哈。</p>
+<p>除了可以使用margin-top把div往上偏移之外，CSS3的transform属性也可以实现这个功能，通过设置div的transform：translateY(-50%)，意思是使得div向上平移自身高度的一半（50%），代码如下：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;css实现元素水平垂直居中&lt;/title&gt;
+    &lt;style&gt;
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0; /*清除默认样式*/
+        padding: 0; /*清除默认样式*/
+    }
+
+    .content {
+        width: 300px;
+        height: 300px;
+        background: orange;
+        margin: 0 auto; /*水平居中*/
+        position: relative;
+        top:50%;
+        transform: translateY(-50%);
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="使用CSS3的flex弹性布局实现水平垂直居中"><a href="#使用CSS3的flex弹性布局实现水平垂直居中" class="headerlink" title="使用CSS3的flex弹性布局实现水平垂直居中"></a>使用CSS3的flex弹性布局实现水平垂直居中</h2><p>使用CSS3的弹性布局很简单，只要设置父元素（这里是指body）的display的值为flex即可。具体代码如下，对代码不做过多的解释，如果想了解弹性布局的可以看阮一峰老师的博客(<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)：" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)：</a></p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;index&lt;/title&gt;
+    &lt;style&gt;
+        html,body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center; /*定义body的元素垂直居中*/
+            justify-content: center; /*定义body的里的元素水平居中*/
+        }
+        .content {
+            width: 300px;
+            height: 300px;
+            background: orange;        
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    
+  </div>
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2016/03/27/CSS常见QA之box-sizing/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2016/02/27/使用hexo搭建个人博客/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+
+
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
