@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>你不知道的margin属性 | LiuQiang&#39;s blog</title>
+  <title>使用hexo搭建个人博客 | LiuQiang&#39;s blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,17 +15,33 @@
     <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
   
 
-  <meta name="description" content="margin属性处于盒子模型的最外层, 用以隔开其他元素, 它可以依次设置4个长度值, 分别表示 “上 右 下 左” 的间距, 其中第1个和第3个值相对应, 第2个与第4个相对应, 如果省略前者, 后者将取与前者相同的数值。   margin属性共存在以下 4 种表示方式:  margin: 10px 1rem 1em 5%; 共 4 个数值, 表示依次设置 上, 右, 下, 左的间距; mar">
+  <meta name="description" content="Hexo 是一个简单地、轻量地、基于Node的静态博客框架，可以方便的生成静态网页托管在github上。">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="你不知道的margin属性">
-<meta property="og:url" content="http://yoursite.com/2016/02/26/你不知道的margin属性/index.html">
+<meta property="og:title" content="使用hexo搭建个人博客">
+<meta property="og:url" content="http://yoursite.com/2015/02/20/使用hexo搭建个人博客/index.html">
 <meta property="og:site_name" content="LiuQiang's blog">
-<meta property="og:description" content="margin属性处于盒子模型的最外层, 用以隔开其他元素, 它可以依次设置4个长度值, 分别表示 “上 右 下 左” 的间距, 其中第1个和第3个值相对应, 第2个与第4个相对应, 如果省略前者, 后者将取与前者相同的数值。   margin属性共存在以下 4 种表示方式:  margin: 10px 1rem 1em 5%; 共 4 个数值, 表示依次设置 上, 右, 下, 左的间距; mar">
-<meta property="og:updated_time" content="2017-08-28T02:36:42.000Z">
+<meta property="og:description" content="Hexo 是一个简单地、轻量地、基于Node的静态博客框架，可以方便的生成静态网页托管在github上。">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/code1.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/hexo-init.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/hexo-ls.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/npm-install.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/hexo-server.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/hexo-index.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/first-cmd.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/first-blog.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/first-blog-content.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/hexo-generate.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/config_place.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/modify_config.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/hexo-deployer.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/hexo-deployto-git.png">
+<meta property="og:image" content="http://7xt42b.com1.z0.glb.clouddn.com/github.png">
+<meta property="og:updated_time" content="2017-09-08T02:52:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="你不知道的margin属性">
-<meta name="twitter:description" content="margin属性处于盒子模型的最外层, 用以隔开其他元素, 它可以依次设置4个长度值, 分别表示 “上 右 下 左” 的间距, 其中第1个和第3个值相对应, 第2个与第4个相对应, 如果省略前者, 后者将取与前者相同的数值。   margin属性共存在以下 4 种表示方式:  margin: 10px 1rem 1em 5%; 共 4 个数值, 表示依次设置 上, 右, 下, 左的间距; mar">
+<meta name="twitter:title" content="使用hexo搭建个人博客">
+<meta name="twitter:description" content="Hexo 是一个简单地、轻量地、基于Node的静态博客框架，可以方便的生成静态网页托管在github上。">
+<meta name="twitter:image" content="http://7xt42b.com1.z0.glb.clouddn.com/code1.png">
 
   
 
@@ -184,20 +200,20 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-垂直外边距合并问题"><span class="toc-text">1.垂直外边距合并问题</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、安装hexo"><span class="toc-text">1、安装hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、使用hexo创建项目"><span class="toc-text">2、使用hexo创建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、如何写博客"><span class="toc-text">3、如何写博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、部署方法"><span class="toc-text">4、部署方法</span></a></li></ol>
   </div>
 
 
 
 <div class="content content-post CENTER">
-   <article id="post-你不知道的margin属性" class="article article-type-post" itemprop="blogPost">
+   <article id="post-使用hexo搭建个人博客" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">你不知道的margin属性</h1>
+    <h1 class="post-title">使用hexo搭建个人博客</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2016.02.26</span>
+        <span>2015.02.20</span>
       </span>
 
       
@@ -227,30 +243,38 @@
 
   <div class="article-content">
     
-      <blockquote>
-<p>margin属性处于盒子模型的最外层, 用以隔开其他元素, 它可以依次设置4个长度值, 分别表示 “上 右 下 左” 的间距, 其中第1个和第3个值相对应, 第2个与第4个相对应, 如果省略前者, 后者将取与前者相同的数值。</p>
-</blockquote>
-<p> margin属性共存在以下 4 种表示方式:</p>
-<ul>
-<li>margin: 10px 1rem 1em 5%; 共 4 个数值, 表示依次设置 上, 右, 下, 左的间距;</li>
-<li>margin: 10px 1rem 1em; 共 3 个数值, 省略第4个值, 左间距将取右间距的值, 表示依次设置 上, 左右, 下的间距;</li>
-<li>margin: 10px 1rem; 共 2 个数值, 省略第3,4个值, 左间距将取右间距的值, 下间距将取上间距的值, 表示依次设置 上下, 左右的间距;</li>
-<li>margin: 10px; 共 1 个数值, 同时省略第2,3,4个值, 表示上下左右的间距均为10px;</li>
-</ul>
-<p>若是块级元素, 借助 margin:0 auto; 即可实现水平居中.<br>看到这里, 你可能会觉得这些你都懂了, 这不要紧, 显然本文也不是为了科普margin的基础语法, 请往下看.</p>
-<h2 id="1-垂直外边距合并问题"><a href="#1-垂直外边距合并问题" class="headerlink" title="1.垂直外边距合并问题"></a>1.垂直外边距合并问题</h2><p>别被上面这个名词给吓倒了, 简单地说, 外边距合并指的是, 当两个垂直外边距相遇时, 它们将形成一个外边距. 合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者. 你可以查看W3Shool CSS外边距合并了解这个基本知识.<br>实际工作中, 垂直外边距合并问题常见于第一个子元素的margin-top会顶开父元素与父元素相邻元素的间距, 而且只在标准浏览器下(FirfFox、Chrome、Opera、Sarfi)产生问题, IE下反而表现良好.</p>
-<pre><code>&lt;style&gt;
-    .outer-box {
-        margin-top: 15px;
-    }
-    .inner-box {
-        margin-top: 30px;
-    }
-&lt;/style&gt;
-&lt;div class=&quot;outer-box&quot;&gt;
-    &lt;div class=&quot;inner-box&quot;&gt;1234567890&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+      <p>Hexo 是一个简单地、轻量地、基于Node的静态博客框架，可以方便的生成静态网页托管在github上。<br><a id="more"></a></p>
+<h3 id="1、安装hexo"><a href="#1、安装hexo" class="headerlink" title="1、安装hexo"></a>1、安装hexo</h3><p>首先，由于hexo是基于Node的，所以要安装npm和node环境，才能安装hexo。此处省略npm和node安装方法。<br>要安装hexo，可以使用npm安装即可，方法如下：</p>
+<pre><code>sudo npm install -g hexo
+</code></pre><p>如图所示：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/code1.png" alt="Alt text"><br>安装完成之后，可以通过如下命令查看是否安装完成：</p>
+<pre><code>hexo -v
+</code></pre><h3 id="2、使用hexo创建项目"><a href="#2、使用hexo创建项目" class="headerlink" title="2、使用hexo创建项目"></a>2、使用hexo创建项目</h3><p>要使用hexo创建项目，首先进入到指定工作目录，例如可以创建在Workspace目录中，在该目录下，通过如下命令即可创建项目：</p>
+<pre><code>hexo init [项目名称]
+</code></pre><p>如下图所示：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/hexo-init.png" alt="Alt text"><br>在Workspace文件夹中，会发现hexo-demo项目已经建立完毕。<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/hexo-ls.png" alt="Alt text"><br>进入到hexo-demo文件夹中，输入如下命令安装依赖：</p>
+<pre><code>npm install
+</code></pre><p>如下图所示：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/npm-install.png" alt="Alt text"><br>并输入如下命令，启动服务器：</p>
+<pre><code>hexo server
+</code></pre><p><img src="http://7xt42b.com1.z0.glb.clouddn.com/hexo-server.png" alt="Alt text"></p>
+<p>在浏览器中，输入：<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 即可访问hexo默认搭建的博客了，如图所示：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/hexo-index.png" alt="Alt text"></p>
+<h3 id="3、如何写博客"><a href="#3、如何写博客" class="headerlink" title="3、如何写博客"></a>3、如何写博客</h3><p>使用如下命令即可创建一篇博客文章</p>
+<pre><code>hexo new &quot;文章名&quot;
+</code></pre><p>如下图所示：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/first-cmd.png" alt="Alt text"></p>
+<p>在我们之前建立的项目中，会看到创建的新文章，如图所示：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/first-blog.png" alt="Alt text"><br>打开浏览器，会看到刚才创建的新文章：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/first-blog-content.png" alt="Alt text"></p>
+<h3 id="4、部署方法"><a href="#4、部署方法" class="headerlink" title="4、部署方法"></a>4、部署方法</h3><p>在部署之前，需要通过如下命令把所有的文章都做静态化处理，就是生成对应的html, javascript, css，使得所有的文章都是由静态文件组成的：</p>
+<pre><code>hexo generate
+</code></pre><p>如图所示：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/hexo-generate.png" alt="Alt text"></p>
+<p>在本地目录下，会生成一个public的目录，里面包括了所有静态化的文件。</p>
+<p>生成静态文件之后，如果要发布到github，还需要配置deploy指令。<br>要配置该指令,需要我们在 _config.yml 文件中修改相关内容即可。<br>_config.yml文件所在位置如图所示：</p>
+<p><img src="http://7xt42b.com1.z0.glb.clouddn.com/config_place.png" alt="Alt text"></p>
+<p>打开_config.yml文件，找到deploy部分，根据自己的情况进行修改，如图所示：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/modify_config.png" alt="Alt text"><br>repo的内容是你在github上创建的仓库的域名(注意:末尾有个git,不要省略)；<br>branch的内容是你想把它所要托管的分支，这个根据需要修改，没有新建分支的话，就默认为：master 分支。</p>
+<p>然后还要输入如下命令进行安装：</p>
+<pre><code>npm install hexo-deployer-git -s
+</code></pre><p>如图所示：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/hexo-deployer.png" alt="Alt text"></p>
+<p>最后输入如下命令发布到github:</p>
+<pre><code>hexo deploy
+</code></pre><p><img src="http://7xt42b.com1.z0.glb.clouddn.com/hexo-deployto-git.png" alt="Alt text"></p>
+<p>现在就能在github上看到刚刚部署的静态web网站：<br><img src="http://7xt42b.com1.z0.glb.clouddn.com/github.png" alt="Alt text"></p>
+
     
   </div>
 </article>
@@ -280,10 +304,10 @@
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2016/03/26/CSS常见QA之实现水平垂直居中/">
+    <a class="show pull-left" href="/2015/02/26/Linux常用命令/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2015/12/26/常见的git命令/">
+    <a class="hide pull-right" href="/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
